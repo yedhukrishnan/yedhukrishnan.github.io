@@ -3,7 +3,7 @@ layout: post
 title: Lessons on Digital Image Processing
 date: 2018-03-18 22:31 +0530
 categories: [Digital Image Processing]
-tags: [python, image-processing]
+tags: [python, digital-image-processing]
 ---
 
 This is the first one of a series of posts I am planning to write about image processing. I intend this post for students who are new to the concepts of image processing. The code snippets, if there are any, will be in simple Python. If you want to learn Python, there is an [interactive tutorial here](https://www.learnpython.org/). You can also check out [Python tutorial](https://docs.python.org/3/tutorial/) on the official website.

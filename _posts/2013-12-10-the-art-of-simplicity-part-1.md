@@ -2,7 +2,7 @@
 layout: post
 title: The Art of Simplicity (Part 1)
 date: 2013-12-10 00:00 +0000
-categories: [Agile, Software Development]
+categories: [Agile]
 tags: [agile]
 ---
 

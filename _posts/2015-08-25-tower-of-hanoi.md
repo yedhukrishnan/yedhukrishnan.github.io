@@ -2,7 +2,7 @@
 layout: post
 title: Tower of Hanoi
 date: 2015-08-25 23:06 +0530
-categories: [Algorithms, Mathematics]
+categories: [Algorithms]
 tags: [elixir, recursion, algorithms, programming, mathematics]
 ---
 
