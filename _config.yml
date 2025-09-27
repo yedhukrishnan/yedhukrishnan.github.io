@@ -120,9 +120,9 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: yedhukrishnan/yedhukrishnan.github.io # format: <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
+    repo_id: R_kgDOIS5mvQ
+    category: General
+    category_id: DIC_kwDOIS5mvc4Cv6cZ
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
