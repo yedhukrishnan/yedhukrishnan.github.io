@@ -23,6 +23,9 @@ social_preview_image: /assets/img/avatar/yedhu.jpg
 
 github_username: yedhukrishnan
 
+# Analytics (GoatCounter) — set to your site code, e.g. "yedhu" for yedhu.goatcounter.com
+goatcounter:
+
 # Comments (giscus)
 giscus:
   repo: yedhukrishnan/yedhukrishnan.github.io

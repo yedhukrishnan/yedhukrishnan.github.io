@@ -87,5 +87,10 @@
       });
     })();
   </script>
+
+  {% if site.goatcounter and jekyll.environment == "production" %}
+  <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  {% endif %}
 </body>
 </html>
