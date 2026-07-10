@@ -35,7 +35,7 @@
   </footer>
 
   <div class="keybar" aria-hidden="true">
-    <span><b>j k</b> Navigate</span>
+    <span><b>j k ↑ ↓</b> Navigate</span>
     <span><b>Enter</b> Open</span>
     <span><b>Esc</b> Home</span>
   </div>
@@ -69,8 +69,8 @@
       document.addEventListener('keydown', function (e) {
         if (e.metaKey || e.ctrlKey || e.altKey || typingTarget(e)) return;
         if (rows.length) {
-          if (e.key === 'j') { select(sel + 1); e.preventDefault(); }
-          else if (e.key === 'k') { select(sel - 1); e.preventDefault(); }
+          if (e.key === 'j' || e.key === 'ArrowDown') { select(sel + 1); e.preventDefault(); }
+          else if (e.key === 'k' || e.key === 'ArrowUp') { select(sel - 1); e.preventDefault(); }
           else if (e.key === 'Enter') {
             var link = rows[sel].querySelector('a');
             if (link) location.href = link.href;
