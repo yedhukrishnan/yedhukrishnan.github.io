@@ -22,3 +22,5 @@ package-lock.json
 !.vscode/tasks.json
 
 Gemfile.lock
+
+redesign-previews/

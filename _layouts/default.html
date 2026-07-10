@@ -3,14 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>
-    (function () {
-      var saved = null;
-      try { saved = localStorage.getItem('theme'); } catch (e) {}
-      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
   {% seo %}
   {% feed_meta %}
   <link rel="icon" href="/assets/img/favicons/favicon.ico" sizes="any">
@@ -19,12 +11,13 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="site-title" href="/"><span class="prompt">~</span>/yedhu</a>
-    <nav class="site-nav">
-      <a href="/">posts</a>
-      <a href="/about/">about</a>
-      <a href="/feed.xml">rss</a>
-      <button id="theme-toggle" aria-label="Toggle color scheme"></button>
+    <div class="head">{{ site.title }} <span class="head-sub">— {{ site.tagline }}</span></div>
+    <nav class="tabs">
+      <a href="/" {% if page.url == '/' %}class="active"{% endif %}>Posts</a>
+      <span class="sep">·</span>
+      <a href="/about/" {% if page.url == '/about/' %}class="active"{% endif %}>About</a>
+      <span class="sep">·</span>
+      <a href="/feed.xml">RSS</a>
     </nav>
   </header>
 
@@ -41,20 +34,58 @@
     </span>
   </footer>
 
+  <div class="keybar" aria-hidden="true">
+    <span><b>j k</b> Navigate</span>
+    <span><b>Enter</b> Open</span>
+    <span><b>Esc</b> Home</span>
+  </div>
+
   <script>
-    document.getElementById('theme-toggle').addEventListener('click', function () {
-      var root = document.documentElement;
-      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('theme', next); } catch (e) {}
-      var giscus = document.querySelector('iframe.giscus-frame');
-      if (giscus) {
-        giscus.contentWindow.postMessage(
-          { giscus: { setConfig: { theme: next === 'dark' ? 'dark_dimmed' : 'light' } } },
-          'https://giscus.app'
-        );
+    (function () {
+      var rows = Array.prototype.slice.call(document.querySelectorAll('tr.post-row'));
+      var sel = 0;
+
+      function typingTarget(e) {
+        var t = e.target;
+        return t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable);
       }
-    });
+
+      function select(i) {
+        if (!rows.length) return;
+        rows[sel].classList.remove('sel');
+        sel = (i + rows.length) % rows.length;
+        rows[sel].classList.add('sel');
+        rows[sel].scrollIntoView({ block: 'nearest' });
+        var info = document.getElementById('selected-info');
+        if (info) {
+          var r = rows[sel];
+          info.innerHTML = 'Selected: <a href="' + r.dataset.url + '">' + r.dataset.title + '</a>' +
+            (r.dataset.excerpt ? ' — ' + r.dataset.excerpt : '');
+        }
+      }
+
+      if (rows.length) select(0);
+
+      document.addEventListener('keydown', function (e) {
+        if (e.metaKey || e.ctrlKey || e.altKey || typingTarget(e)) return;
+        if (rows.length) {
+          if (e.key === 'j') { select(sel + 1); e.preventDefault(); }
+          else if (e.key === 'k') { select(sel - 1); e.preventDefault(); }
+          else if (e.key === 'Enter') {
+            var link = rows[sel].querySelector('a');
+            if (link) location.href = link.href;
+          }
+        } else {
+          if (e.key === 'j') { window.scrollBy({ top: 120, behavior: 'smooth' }); }
+          else if (e.key === 'k') { window.scrollBy({ top: -120, behavior: 'smooth' }); }
+        }
+        if (e.key === 'Escape' && location.pathname !== '/') { location.href = '/'; }
+      });
+
+      rows.forEach(function (r, i) {
+        r.addEventListener('mouseenter', function () { select(i); });
+      });
+    })();
   </script>
 </body>
 </html>

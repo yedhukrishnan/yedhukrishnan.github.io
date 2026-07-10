@@ -1,21 +1,31 @@
 ---
 layout: default
 ---
-<section class="intro">
-  {{ content }}
-</section>
+<div class="cols">
+  <section class="panel">
+    <h2 class="paneltitle">POST INDEX</h2>
+    <table class="post-index">
+      {% assign by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+      {% for year in by_year %}
+      <tr class="year-sep"><td colspan="2">── {{ year.name }} ──</td></tr>
+      {% for post in year.items %}
+      <tr class="post-row"
+          data-url="{{ post.url }}"
+          data-title="{{ post.title | escape }}"
+          data-excerpt="{{ post.excerpt | strip_html | normalize_whitespace | truncate: 120 | escape }}">
+        <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+        <td class="val">[{{ post.date | date: "%Y-%m-%d" }}]</td>
+      </tr>
+      {% endfor %}
+      {% endfor %}
+    </table>
+  </section>
 
-{% assign by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-{% for year in by_year %}
-<section class="year-group">
-  <h2 class="year"><span class="prompt">##</span> {{ year.name }}</h2>
-  <ul class="post-list">
-    {% for post in year.items %}
-    <li>
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d" }}</time>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
-{% endfor %}
+  <aside class="panel">
+    <h2 class="paneltitle">INFO</h2>
+    <div class="help">
+      {{ content }}
+      <p id="selected-info"></p>
+    </div>
+  </aside>
+</div>
