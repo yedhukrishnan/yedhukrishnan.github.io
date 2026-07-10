@@ -10,7 +10,8 @@ tags: [books, non-fiction]
 
 Factfulness is one book I would recommend to anyone who wants to have a clear perspective about the world based on facts. It was written by Hans Rosling; a medical doctor, professor of international health and a public educator. I recently found this TED video; and interesting one which will help you know him better: The best stats you’ve ever seen. The book is a compilation of his years of research and experience, and is co-written by his son Ola Rosling and daughter-in-law Anna Rosling. I heard about it first when Bill Gates mentioned this book in his blog. He explains how it helped him not to talk about ‘developed’ and ‘developing’ countries.
 
-![Desktop View](/assets/img/2018/factfulness-cover.jpeg){: width="1504 .w-24 .left}
+![Factfulness book cover](/assets/img/2018/factfulness-cover.jpeg)
+
 We live with misconceptions about the current state of the world. We hear the bad side of everything everyday and we think the world is slowly deteriorating. This over-dramatic view is what Hans Rosling demystifies in Factfulness. He presents why and how we are wrong through a simple quiz and explanations. It doesn’t end there. He further dives into what causes these distorted views, how to look out for the warning signs, and how to avoid them.
 
 He describes ten instincts, in ten chapters, which are responsible for this. Although these one line explanations is nothing compared to the chapters in the book, if you do not like spoilers, you can skip this part.
