@@ -1,0 +1,48 @@
+# Projects shown on /projects/ — grouped into sections, order is display order.
+# Fields per item: name (required), url, lang, year, desc, status (optional: active | archived)
+- section: My Blog
+  items:
+    - name: yedhu.me
+      url: https://github.com/yedhukrishnan/yedhukrishnan.github.io
+      lang: Jekyll
+      desc: "Fable helped me build the theme. But the posts here are original and written by me."
+      status: active
+
+- section: "Vibe Coded"
+  items:
+    - name: time-tracker
+      url: https://github.com/yedhukrishnan/mac-simple-time-tracker
+      lang: Swift
+      desc: "A simple native time tracker for macOS."
+
+    - name: journal-chat
+      url: https://github.com/yedhukrishnan/journal-chat
+      lang: Python
+      desc: "Talk to your own journal entries."
+
+- section: "Before AI - Mostly for learning"
+  items:
+    - name: turing-machine
+      url: https://github.com/yedhukrishnan/turing-machine
+      lang: C
+      desc: "Deterministic and non-deterministic Turing machine implementations. My most-starred project."
+
+    - name: quiet-page
+      url: https://github.com/yedhukrishnan/quiet-page
+      lang: JavaScript
+      desc: "Text sleep-screen generator for E-ink readers."
+
+    - name: read
+      url: https://github.com/yedhukrishnan/read
+      lang: Ruby
+      desc: "A Hacker News-style site — post articles, read, and upvote. Full Rails app."
+
+    - name: resume-builder
+      url: https://github.com/yedhukrishnan/resume-builder
+      lang: HTML
+      desc: "Tool to build your online resume."
+
+    - name: face-recognition
+      url: https://github.com/yedhukrishnan/face-recognition
+      lang: Python
+      desc: "Face recognition using FaceNet and one-shot learning with Keras."

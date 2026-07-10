@@ -117,8 +117,17 @@ tr.year-sep td {
   letter-spacing: 0.05em;
 }
 
-tr.post-row td:first-child::before { content: "  "; white-space: pre; }
-tr.post-row.sel td:first-child::before { content: "▸ "; color: var(--amber); }
+tr.post-row td:first-child {
+  position: relative;
+  padding-left: calc(0.3rem + 2ch);
+}
+
+tr.post-row.sel td:first-child::before {
+  content: "▸";
+  position: absolute;
+  left: 0.4rem;
+  color: var(--amber);
+}
 
 tr.post-row.sel td { background: var(--sel); }
 tr.post-row.sel td a { color: var(--bright); }
@@ -135,6 +144,18 @@ tr.post-row.sel td.val { color: var(--bar-fg); }
   padding-top: 0.8rem;
   min-height: 3.5rem;
 }
+
+/* ---------------------------- projects ---------------------------- */
+
+.projects-table td { vertical-align: top; padding: 0.45rem 0.3rem; }
+
+.proj-desc { color: var(--muted); font-size: 0.82rem; }
+
+tr.post-row.sel .proj-desc { color: var(--bar-fg); }
+
+.proj-status { color: var(--muted); font-size: 0.78rem; margin-left: 0.4rem; }
+
+.proj-more { color: var(--muted); font-size: 0.82rem; margin: 1rem 0 0; }
 
 /* ------------------------------ post ------------------------------ */
 

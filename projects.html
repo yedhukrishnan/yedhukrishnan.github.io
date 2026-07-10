@@ -1,0 +1,23 @@
+---
+layout: default
+title: projects
+permalink: /projects/
+---
+<div class="panel post-view">
+  <h2 class="paneltitle">PROJECTS</h2>
+  <table class="post-index projects-table">
+    {% for group in site.data.projects %}
+    <tr class="year-sep"><td colspan="2">── {{ group.section }} ──</td></tr>
+    {% for p in group.items %}
+    <tr class="post-row"
+        data-url="{{ p.url }}"
+        data-title="{{ p.name | escape }}"
+        data-excerpt="{{ p.desc | escape }}">
+      <td><a href="{{ p.url }}" target="_blank">{{ p.name }}</a>{% if p.status == 'archived' %} <span class="proj-status">[archived]</span>{% endif %}<div class="proj-desc">{{ p.desc }}</div></td>
+      <td class="val">[{{ p.lang }}{% if p.year %} · {{ p.year }}{% endif %}]</td>
+    </tr>
+    {% endfor %}
+    {% endfor %}
+  </table>
+  <p class="proj-more">More on <a href="https://github.com/{{ site.github_username }}">github/{{ site.github_username }}</a>.</p>
+</div>
