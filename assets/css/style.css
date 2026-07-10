@@ -49,6 +49,8 @@ a:hover { text-decoration: underline; }
   letter-spacing: 0.02em;
 }
 
+.head a { color: inherit; }
+
 .head-sub { font-weight: 400; color: var(--bar-fg); }
 
 .tabs {
