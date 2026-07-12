@@ -17,6 +17,8 @@
       <span class="sep">·</span>
       <a href="/projects/" {% if page.url == '/projects/' %}class="active"{% endif %}>Projects</a>
       <span class="sep">·</span>
+      <a href="/tags/" {% if page.url == '/tags/' %}class="active"{% endif %}>Tags</a>
+      <span class="sep">·</span>
       <a href="/about/" {% if page.url == '/about/' %}class="active"{% endif %}>About</a>
       <span class="sep">·</span>
       <a href="/feed.xml">RSS</a>
@@ -54,8 +56,16 @@
 
       function select(i) {
         if (!rows.length) return;
+        var n = rows.length;
+        var dir = i >= sel ? 1 : -1;
+        var idx = (i + n) % n;
+        var tries = 0;
+        while (rows[idx].offsetParent === null && tries < n) {
+          idx = (idx + dir + n) % n;
+          tries++;
+        }
         rows[sel].classList.remove('sel');
-        sel = (i + rows.length) % rows.length;
+        sel = idx;
         rows[sel].classList.add('sel');
         rows[sel].scrollIntoView({ block: 'nearest' });
         var info = document.getElementById('selected-info');

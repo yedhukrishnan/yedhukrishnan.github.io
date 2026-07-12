@@ -177,7 +177,61 @@ tr.post-row.sel .proj-desc { color: var(--bar-fg); }
   margin: 0 0 1.3rem;
 }
 
-.tag { color: var(--green); margin-right: 0.5rem; }
+.tag, .category { color: var(--green); margin-right: 0.5rem; }
+.category { color: var(--amber); }
+.tag:hover, .category:hover { text-decoration: underline; }
+
+/* -------------------------- tags & filters ------------------------- */
+
+.filter-group {
+  margin: 0 0 0.9rem;
+  line-height: 2.1;
+}
+
+.filter-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  margin-right: 0.6rem;
+}
+
+.pill {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--fg);
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.15rem 0.5rem;
+  margin: 0 0.35rem 0.35rem 0;
+  cursor: pointer;
+}
+
+.pill:hover { border-color: var(--link); color: var(--link); }
+
+.pill.active {
+  background: var(--bar);
+  border-color: var(--bar);
+  color: var(--bar-fg);
+  font-weight: 700;
+}
+
+.pill-count {
+  color: var(--muted);
+  margin-left: 0.4rem;
+  font-size: 0.75rem;
+}
+
+.pill.active .pill-count { color: var(--bar-fg); }
+
+.filter-status {
+  color: var(--muted);
+  font-size: 0.82rem;
+  border-top: 1px dashed var(--border);
+  border-bottom: 1px dashed var(--border);
+  padding: 0.6rem 0;
+  margin: 0 0 0.8rem;
+}
 
 .post-content { max-width: 42rem; }
 

@@ -1,0 +1,97 @@
+---
+layout: default
+title: tags
+permalink: /tags/
+---
+<div class="panel post-view" id="tags-page">
+  <h2 class="paneltitle">TAGS &amp; CATEGORIES</h2>
+
+  <div class="filter-group">
+    <span class="filter-label">Categories</span>
+    {%- assign categories = site.categories | sort -%}
+    {%- for cat in categories %}
+    <button type="button" class="pill" data-filter-type="category" data-filter-value="{{ cat[0] | slugify }}">{{ cat[0] }}<span class="pill-count">{{ cat[1].size }}</span></button>
+    {%- endfor %}
+  </div>
+
+  <div class="filter-group">
+    <span class="filter-label">Tags</span>
+    {%- assign tags = site.tags | sort -%}
+    {%- for tag in tags %}
+    <button type="button" class="pill" data-filter-type="tag" data-filter-value="{{ tag[0] | slugify }}">#{{ tag[0] }}<span class="pill-count">{{ tag[1].size }}</span></button>
+    {%- endfor %}
+  </div>
+
+  <p class="filter-status" id="filter-status">Showing all {{ site.posts.size }} posts. Click a category or tag to filter.</p>
+
+  <table class="post-index" id="tags-post-table">
+    {%- assign posts_sorted = site.posts | sort: 'date' | reverse -%}
+    {%- for post in posts_sorted %}
+    <tr class="post-row"
+        data-url="{{ post.url }}"
+        data-title="{{ post.title | escape }}"
+        data-excerpt="{{ post.excerpt | strip_html | normalize_whitespace | truncate: 120 | escape }}"
+        data-categories=" {% for c in post.categories %}{{ c | slugify }} {% endfor %}"
+        data-tags=" {% for t in post.tags %}{{ t | slugify }} {% endfor %}">
+      <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+      <td class="val">[{{ post.date | date: "%Y-%m-%d" }}]</td>
+    </tr>
+    {%- endfor %}
+  </table>
+</div>
+
+<script>
+(function () {
+  var pills = Array.prototype.slice.call(document.querySelectorAll('#tags-page .pill'));
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#tags-post-table tr.post-row'));
+  var status = document.getElementById('filter-status');
+  var active = null;
+
+  function apply() {
+    if (!active) {
+      rows.forEach(function (r) { r.style.display = ''; });
+      status.textContent = 'Showing all ' + rows.length + ' posts. Click a category or tag to filter.';
+      pills.forEach(function (p) { p.classList.remove('active'); });
+      return;
+    }
+    var count = 0;
+    rows.forEach(function (r) {
+      var list = (active.type === 'category' ? r.dataset.categories : r.dataset.tags) || '';
+      var match = list.indexOf(' ' + active.value + ' ') !== -1;
+      r.style.display = match ? '' : 'none';
+      if (match) count++;
+    });
+    status.textContent = 'Showing ' + count + ' post' + (count === 1 ? '' : 's') + ' for "' + active.label + '".';
+  }
+
+  function setActive(type, value) {
+    var pill = pills.filter(function (p) {
+      return p.dataset.filterType === type && p.dataset.filterValue === value;
+    })[0];
+    if (!pill) return;
+    active = { type: type, value: value, label: pill.childNodes[0].textContent.trim() };
+    pills.forEach(function (p) { p.classList.remove('active'); });
+    pill.classList.add('active');
+    apply();
+    pill.scrollIntoView({ block: 'nearest' });
+  }
+
+  pills.forEach(function (p) {
+    p.addEventListener('click', function () {
+      var type = p.dataset.filterType, value = p.dataset.filterValue;
+      if (active && active.type === type && active.value === value) {
+        active = null;
+        apply();
+      } else {
+        setActive(type, value);
+      }
+    });
+  });
+
+  var params = new URLSearchParams(window.location.search);
+  var qTag = params.get('tag');
+  var qCategory = params.get('category');
+  if (qTag) setActive('tag', qTag);
+  else if (qCategory) setActive('category', qCategory);
+})();
+</script>
