@@ -10,7 +10,7 @@ tags: [books, comics]
 
 ![Marie Curie](/assets/img/2018/curie.webp)
 
-Zen Pencils always lift my spirits. They are good for a quick shot of inspiration. The latest book is no different. Like Zen Pencils: Cartoon Quotes from Inspirational Folks and Dream the Impossible Dream, Creative Struggle is yet another collection of inspirational comics, most of which are available to read for free in zenpencils.com. I love to keep hardcopy versions because they are worth it, and are good for gifting.
+Zen Pencils always lift my spirits. They are good for a quick shot of inspiration. The latest book is no different. Like Zen Pencils: Cartoon Quotes from Inspirational Folks and Dream the Impossible Dream, Creative Struggle is yet another collection of inspirational comics, most of which are available to read for free in [zenpencils.com](https://www.zenpencils.com/){:target="_blank"}. I love to keep hardcopy versions because they are worth it, and are good for gifting.
 
 ![Factfulness book cover](/assets/img/2018/creative-struggle-cover.jpg)
 
