@@ -94,9 +94,11 @@
         if (e.key === 'Escape' && location.pathname !== '/') { location.href = '/'; }
       });
 
-      rows.forEach(function (r, i) {
-        r.addEventListener('mouseenter', function () { select(i); });
-      });
+      if (window.matchMedia('(hover: hover)').matches) {
+        rows.forEach(function (r, i) {
+          r.addEventListener('mouseenter', function () { select(i); });
+        });
+      }
     })();
   </script>
 
