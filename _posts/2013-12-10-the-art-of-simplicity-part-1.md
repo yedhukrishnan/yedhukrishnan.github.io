@@ -22,4 +22,4 @@ Here is a famous quote by Richard Feynman, an American theoretical physicist:
 
 *(to be continued...)*
 
-Originally published on my blog: [The Art of Simplicity (Part 1)](https://yedhukrishnan.blogspot.com/2013/12/the-art-of-simplicity-part-1.html)
+Originally published on my blog: [The Art of Simplicity (Part 1)](https://yedhukrishnan.blogspot.com/2013/12/the-art-of-simplicity-part-1.html){:target="_blank" rel="noopener"}

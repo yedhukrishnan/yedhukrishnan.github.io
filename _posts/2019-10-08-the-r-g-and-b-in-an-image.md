@@ -96,4 +96,4 @@ Now you know how RGB images are made; by using a combination of values on R, G, 
 
 In the coming posts, I’ll explain about processing a digital image using Python. For now, please share your feedback and suggestions.
 
-Originally published on Medium: [The R, G, and B in an Image](https://medium.com/analytics-vidhya/the-r-g-and-b-in-an-image-971b9aecfb7f).
+Originally published on Medium: [The R, G, and B in an Image](https://medium.com/analytics-vidhya/the-r-g-and-b-in-an-image-971b9aecfb7f){:target="_blank" rel="noopener"}.

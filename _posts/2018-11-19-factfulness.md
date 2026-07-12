@@ -37,4 +37,4 @@ _"The world cannot be understood without numbers. But the world cannot be unders
 
 This book was an eye-opener for me. Also, this is not about optimism. The author himself says he is not an optimist, but a ‘possibiist’; someone who neither hopes without reason, nor fears without reason, someone who constantly resists the overdramatic worldview. It doesn’t say the world is good. It says the world is both good and bad; they coexist together. The learnings from the book can be applied in about everything in our daily life.
 
-Originally published on my blog: [Factfulness](https://mirrordimension.wordpress.com/2018/11/29/factfulness/)
+Originally published on my blog: [Factfulness](https://mirrordimension.wordpress.com/2018/11/29/factfulness/){:target="_blank" rel="noopener"}

@@ -32,4 +32,4 @@ end
 
 I'm updating my GitHub repository ([yedhukrishnan/mathematics](https://github.com/yedhukrishnan/mathematics)) with more math problems. Feel free to check them out to suggest improvements or to give comments.
 
-Originally published on my blog: [Tower of Hanoi](https://yedhukrishnan.blogspot.com/2015/08/tower-of-hanoi.html)
+Originally published on my blog: [Tower of Hanoi](https://yedhukrishnan.blogspot.com/2015/08/tower-of-hanoi.html){:target="_blank" rel="noopener"}

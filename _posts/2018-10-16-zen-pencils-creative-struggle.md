@@ -16,4 +16,4 @@ Zen Pencils always lift my spirits. They are good for a quick shot of inspiratio
 
 Gavin Aung Than gives colours to these magnificent and inspirational quotes by famous personalities and transform them into stories. He illustrates the struggles they went through, how they conquered the fears and created their best pieces of work. He also gives a glimpse of the unexplored sides of these famous personalities we know.
 
-Originally published on my blog: [Zen Pencils — Creative Struggle: Illustrated Advice from Masters of Creativity](https://mirrordimension.wordpress.com/2018/10/16/zen-pencils-creative-struggle-illustrated-advice-from-masters-of-creativity/)
+Originally published on my blog: [Zen Pencils — Creative Struggle: Illustrated Advice from Masters of Creativity](https://mirrordimension.wordpress.com/2018/10/16/zen-pencils-creative-struggle-illustrated-advice-from-masters-of-creativity/){:target="_blank" rel="noopener"}

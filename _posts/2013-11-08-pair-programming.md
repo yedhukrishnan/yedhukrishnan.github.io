@@ -41,4 +41,4 @@ Isn’t it awkward if I pair with someone who is much better than me? Of course 
 
 > “When you play with a better player, your game gets better.”
 
-Originally published on my blog: [Pair Programming](https://yedhukrishnan.blogspot.com/search/label/Pair%20Programming)
+Originally published on my blog: [Pair Programming](https://yedhukrishnan.blogspot.com/search/label/Pair%20Programming){:target="_blank" rel="noopener"}
