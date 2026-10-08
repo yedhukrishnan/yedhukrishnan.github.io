@@ -26,7 +26,7 @@ I finished the book and loved it. The book was an easy read, although some chara
 
 This was the second series I finished, and it had seven books, and the protagonist’s name is Harry. Combine that with what the guy said about the other book being better than Harry Potter, and I feel that is a funny coincidence.
 
-Why did I love the series? I loved the characters, not just Harry Clifton. The story has good and bad people, and the entire series felt like watching a Movie. Here is something I wrote in my original [review]({% post_url 2018-02-25-only-time-will-tell %}):
+Why did I love the series? I loved the characters, not just Harry Clifton. The story has good and bad people, and the entire series felt like watching a Movie. Here is something I wrote in my original [review]({% post_url 2018-02-25-only-time-will-tell-review %}):
 
 > I loved the characters, especially Maisie Clifton, Captain Jack Tarrant (Old Jack), and Emma Barrington; they prove how passionate and true a love can be as a mother, a mentor, and a lover, respectively. I loved Harry and Emma as a couple.
 
