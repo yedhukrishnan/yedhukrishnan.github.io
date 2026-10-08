@@ -26,6 +26,11 @@ github_username: yedhukrishnan
 # Analytics (GoatCounter) — set to your site code, e.g. "yedhu" for yedhu.goatcounter.com
 goatcounter: yedhu
 
+# Goodreads "currently reading" panel on the home page.
+# user_id is the number in your profile URL: goodreads.com/user/show/<user_id>-name
+goodreads:
+  user_id: "37922611"
+
 # Comments (giscus)
 giscus:
   repo: yedhukrishnan/yedhukrishnan.github.io
@@ -58,6 +63,7 @@ sass:
   style: compressed
 
 exclude:
+  - _scripts
   - README.md
   - LICENSE
   - Gemfile

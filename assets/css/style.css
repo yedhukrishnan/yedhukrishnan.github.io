@@ -145,6 +145,33 @@ tr.post-row.sel td.val { color: var(--bar-fg); }
   min-height: 3.5rem;
 }
 
+/* ------------------------ currently reading ------------------------ */
+
+.side { display: grid; gap: 1.6rem; }
+
+.reading {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.reading li { margin: 0 0 0.7rem; padding-left: 2ch; position: relative; }
+.reading li::before { content: "▸"; position: absolute; left: 0; color: var(--amber); }
+
+.reading-author { display: block; color: var(--muted); font-size: 0.8rem; }
+
+.reading-more {
+  margin: 0;
+  padding-top: 0.6rem;
+  border-top: 1px dashed var(--border);
+  font-size: 0.78rem;
+}
+
+.reading-more a { color: var(--muted); }
+.reading-more a:hover { color: var(--link); }
+
 /* ---------------------------- projects ---------------------------- */
 
 .projects-table td { vertical-align: top; padding: 0.45rem 0.3rem; }

@@ -25,3 +25,6 @@ Gemfile.lock
 
 redesign-previews/
 .DS_Store
+
+# Generated at build time by _scripts/fetch_goodreads.rb
+_data/currently_reading.json

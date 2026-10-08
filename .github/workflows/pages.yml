@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: "30 0 * * *" # daily, to refresh the Goodreads shelf
 
 permissions:
   contents: read
@@ -26,6 +28,9 @@ jobs:
           bundler-cache: true
 
       - uses: actions/configure-pages@v5
+
+      - name: Fetch Goodreads shelf
+        run: ruby _scripts/fetch_goodreads.rb
 
       - name: Build site
         run: bundle exec jekyll build

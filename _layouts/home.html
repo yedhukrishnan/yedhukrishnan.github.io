@@ -21,11 +21,31 @@ layout: default
     </table>
   </section>
 
-  <aside class="panel">
-    <h2 class="paneltitle">INFO</h2>
-    <div class="help">
-      {{ content }}
-      <p id="selected-info"></p>
-    </div>
-  </aside>
+  <div class="side">
+    <aside class="panel">
+      <h2 class="paneltitle">INFO</h2>
+      <div class="help">
+        {{ content }}
+        <p id="selected-info"></p>
+      </div>
+    </aside>
+
+    {% assign reading = site.data.currently_reading %}
+    {% if reading and reading.size > 0 %}
+    <aside class="panel">
+      <h2 class="paneltitle">CURRENTLY READING</h2>
+      <ul class="reading">
+        {% for book in reading %}
+        <li>
+          <a href="{{ book.url }}">{{ book.title }}</a>
+          {% if book.author != "" %}<span class="reading-author">{{ book.author }}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      <p class="reading-more">
+        <a href="https://www.goodreads.com/review/list/{{ site.goodreads.user_id }}?shelf=currently-reading">on goodreads →</a>
+      </p>
+    </aside>
+    {% endif %}
+  </div>
 </div>
