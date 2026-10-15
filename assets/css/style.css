@@ -142,7 +142,12 @@ tr.post-row.sel td.val { color: var(--bar-fg); }
 #selected-info {
   border-top: 1px dashed var(--border);
   padding-top: 0.8rem;
-  min-height: 3.5rem;
+  /* fixed height (7 lines) so the panel doesn't jump as the selection changes */
+  height: calc(0.8rem + 7 * 1.6em);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
 }
 
 /* ------------------------ currently reading ------------------------ */
