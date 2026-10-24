@@ -381,6 +381,8 @@ pre.term { color: var(--muted); }
   margin-right: 0.6rem;
 }
 
+.share-line { margin: 0 0 0.4rem; }
+
 .share a { margin-right: 0.5rem; }
 
 /* ---------------------------- comments ---------------------------- */
