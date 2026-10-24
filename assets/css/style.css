@@ -367,6 +367,22 @@ pre.term { color: var(--muted); }
 .highlight .gh, .highlight .gu { color: #7dcfff; font-weight: 700; }
 .highlight .err { color: #f7768e; }
 
+/* ----------------------------- share ------------------------------ */
+
+.share {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
+
+.share-label {
+  color: var(--amber);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-right: 0.6rem;
+}
+
+.share a { margin-right: 0.5rem; }
+
 /* ---------------------------- comments ---------------------------- */
 
 .comments {
