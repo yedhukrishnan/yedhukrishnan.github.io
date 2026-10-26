@@ -249,6 +249,26 @@ tr.post-row.sel .proj-desc { color: var(--bar-fg); }
 
 .gh-panel .reading-more { margin-top: 1rem; }
 
+/* ------------------------------ resume ----------------------------- */
+
+.cv-panel { margin-top: 2rem; padding: 1.25rem 1.5rem; }
+.cv-panel:first-child { margin-top: 0.5rem; }
+
+.cv-summary { margin: 0; }
+
+.cv-item + .cv-item { margin-top: 1rem; padding-top: 0.9rem; border-top: 1px dashed var(--border); }
+
+.cv-top { line-height: 1.5; }
+.cv-role { color: var(--bright); font-weight: 700; }
+.cv-org { color: var(--link); }
+.cv-dates { float: right; color: var(--muted); font-size: 0.8rem; }
+
+.cv-points { margin: 0.4rem 0 0; padding: 0; list-style: none; }
+.cv-points li { margin-bottom: 0.25rem; }
+
+.cv-skills td { white-space: normal; padding: 0.15rem 0; vertical-align: top; }
+.cv-skills td.cv-group { color: var(--amber); width: 7rem; padding-right: 1rem; }
+
 /* ------------------------------ post ------------------------------ */
 
 .post-view {
@@ -515,4 +535,6 @@ pre.term { color: var(--muted); }
   .gh-cols { grid-template-columns: 1fr; gap: 0; }
   .gh-range { float: none; display: block; }
   .gh-panel { padding: 1rem; }
+  .cv-panel { padding: 1rem; }
+  .cv-dates { float: none; display: block; }
 }

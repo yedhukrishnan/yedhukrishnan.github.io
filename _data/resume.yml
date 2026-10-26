@@ -1,0 +1,120 @@
+summary: >-
+    Software Engineer, machine learning enthusiast, and a reader. I currently work as a senior software engineer at PromoHunt, working with Ruby on Rails, Next.js, and data pipelines. I build and maintain web applications and data pipelines. Outside of work, I read, stay up to date with the latest in machine learning and data science, and work on my hobby projects.
+
+
+
+experience:
+  - role: Senior Software Engineer
+    org: PromoHunt
+    dates: Feb 2019 – present
+    points:
+      - Build tools that help distributors in the promotional products industry.
+      - Ship Chrome/Firefox extensions and web apps with React, Ruby on Rails, Elasticsearch and TensorFlow.
+      - Run a data pipeline (MongoDB) that pulls product data from many sources and transforms it for the main app.
+
+  - role: Product Development Consultant
+    org: Aconex
+    dates: 2015 – Jun 2017
+    points:
+      - Consultant from Multunus, then an independent contractor for three months.
+      - Worked on Aconex Field, an app for running inspections on construction sites.
+      - Ruby Webmachine, Cordova and Angular.js.
+
+  - role: Product Developer
+    org: Multunus Software
+    dates: Jun 2013 – Apr 2017
+    points:
+      - Built web and mobile apps for clients in teams of 2 to 8, with Rails, Sails.js, Backbone.js and Android.
+      - Practiced agile, pair programming and TDD.
+      - Contributed to open source, including the Sails.js framework.
+      - Ran Hacknight and Coderetreat events, interviewed candidates and trained new joiners.
+
+projects:
+  - name: Image Captioning System
+    year: 2018
+    tech: Python · Keras · TensorFlow
+    desc: Generates captions for images with convolutional and recurrent neural networks, so images can be searched by text.
+  - name: Checkers using Deep Learning
+    year: 2018
+    tech: Python · TensorFlow
+    desc: A checkers engine built on deep neural networks and Monte Carlo Tree Search, trained on past tournament games. M.Tech course project.
+  - name: Aconex Field
+    year: 2016
+    tech: Ruby · Cordova · Angular.js
+    desc: An app for structured and unstructured site inspections in construction.
+  - name: bidPress
+    year: 2015
+    tech: Rails · Backbone.js · Phoenix
+    desc: A site for US customers to design and order custom printed T-shirts, with a Phoenix service for price calculation.
+  - name: EyzUp
+    year: 2015
+    tech: Android · Rails
+    desc: An Android app that tracks phone and app usage, sets limits, and lets parents monitor their children's devices remotely.
+  - name: One MDM
+    year: 2014
+    tech: Android · Sails.js
+    desc: An open source mobile device management tool. Register devices, check their stats, and run commands or install apps remotely.
+  - name: Even More Passport
+    year: 2014
+    tech: Sails.js
+    desc: An example Sails.js app showing authentication and authorization with Passport, made while contributing to Sails.js.
+  - name: MDM Solution for Context Media Health
+    year: 2013
+    tech: Android · Rails
+    desc: Mobile device management for Context Media Health, a Chicago healthcare company.
+  - name: Checkers using Artificial Neural Networks
+    year: 2013
+    tech: Python
+    desc: A checkers player in Python whose neural network was trained on 250,000+ samples to predict moves. Won the best CS project award.
+  - name: Image Compression using PCA
+    year: 2012
+    tech: Python
+    desc: Lossy image compression with Principal Component Analysis, at any chosen compression ratio.
+
+education:
+  - degree: Master's, Digital Image Processing
+    org: Model Engineering College
+    dates: 2017 – 2019
+    points:
+      - Mentored students on machine learning projects.
+      - Ran workshops on Git, Python, machine learning and core CS topics.
+
+  - degree: Bachelor's, Computer Science and Engineering
+    org: Federal Institute of Science And Technology
+    dates: 2009 – 2013
+    points:
+      - Won the best CS project award for a Checkers player built on artificial neural networks.
+      - Top 500 teams in IEEEXtreme (2014).
+      - IEEE FISAT chapter volunteer and Supercomputing Technologies Group member.
+      - Organised the UST Global Coding Competition.
+
+certifications:
+  - name: Deep Learning Specialization
+    issuer: Coursera
+    date: Sep 2018
+  - name: Python for Data Science
+    issuer: Coursera
+    date: Nov 2018
+  - name: Data Science Methodology
+    issuer: Coursera
+    date: Oct 2018
+  - name: Open Source Tools for Data Science
+    issuer: Coursera
+    date: Oct 2018
+  - name: What is Data Science?
+    issuer: Coursera
+    date: Oct 2018
+
+skills:
+  - group: languages
+    items: [Ruby, JavaScript, Python, Java]
+  - group: web
+    items: [Ruby on Rails, React, Sails.js, Angular.js, Backbone.js]
+  - group: mobile
+    items: [Android, Cordova]
+  - group: data
+    items: [MongoDB, Elasticsearch, data pipelines]
+  - group: ml
+    items: [TensorFlow, Keras, neural networks, image processing]
+  - group: practices
+    items: [TDD, pair programming, agile]

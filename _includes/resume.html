@@ -1,0 +1,68 @@
+{% assign r = site.data.resume %}
+{% if r %}
+<section class="panel cv-panel">
+  <h2 class="paneltitle">RESUME</h2>
+  <p class="cv-summary">{{ r.summary }}</p>
+</section>
+
+<section class="panel cv-panel">
+  <h2 class="paneltitle">EXPERIENCE</h2>
+  {% for job in r.experience %}
+  <div class="cv-item">
+    <div class="cv-top">
+      <span class="cv-role">{{ job.role }}</span> <span class="cv-org">@ {{ job.org }}</span>
+      <span class="cv-dates">[{{ job.dates }}]</span>
+    </div>
+    <ul class="reading cv-points">
+      {% for p in job.points %}<li>{{ p }}</li>{% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="panel cv-panel">
+  <h2 class="paneltitle">SELECTED PROJECTS</h2>
+  <table class="post-index projects-table">
+    {% for p in r.projects %}
+    <tr>
+      <td><span class="cv-role">{{ p.name }}</span><div class="proj-desc">{{ p.desc }}</div></td>
+      <td class="val">[{{ p.tech }} · {{ p.year }}]</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p class="proj-more">Open source and side projects are on the <a href="/projects/">projects</a> page.</p>
+</section>
+
+<section class="panel cv-panel">
+  <h2 class="paneltitle">EDUCATION</h2>
+  {% for ed in r.education %}
+  <div class="cv-item">
+    <div class="cv-top">
+      <span class="cv-role">{{ ed.degree }}</span> <span class="cv-org">@ {{ ed.org }}</span>
+      <span class="cv-dates">[{{ ed.dates }}]</span>
+    </div>
+    <ul class="reading cv-points">
+      {% for p in ed.points %}<li>{{ p }}</li>{% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="panel cv-panel">
+  <h2 class="paneltitle">CERTIFICATIONS</h2>
+  <table class="gh-stats cv-skills">
+    {% for c in r.certifications %}
+    <tr><td>{{ c.name }} <span class="cv-org">@ {{ c.issuer }}</span></td><td class="val">{{ c.date }}</td></tr>
+    {% endfor %}
+  </table>
+</section>
+
+<section class="panel cv-panel">
+  <h2 class="paneltitle">SKILLS</h2>
+  <table class="gh-stats cv-skills">
+    {% for s in r.skills %}
+    <tr><td class="cv-group">{{ s.group }}</td><td>{{ s.items | join: " · " }}</td></tr>
+    {% endfor %}
+  </table>
+</section>
+{% endif %}
