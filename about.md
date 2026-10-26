@@ -2,6 +2,7 @@
 layout: page
 title: about
 permalink: /about/
+github_stats: true
 ---
 
 Software engineer, reader, blogger, works from home.

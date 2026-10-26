@@ -28,3 +28,6 @@ redesign-previews/
 
 # Generated at build time by _scripts/fetch_goodreads.rb
 _data/currently_reading.json
+
+# Generated at build time by _scripts/fetch_github.rb
+_data/github.json

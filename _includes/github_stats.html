@@ -1,0 +1,68 @@
+{% assign gh = site.data.github %}
+{% if gh and gh.weeks %}
+{% assign step = 13 %}{% assign left = 30 %}{% assign top = 16 %}
+{% assign svg_w = gh.weeks.size | times: step | plus: left %}
+{% assign svg_h = 7 | times: step | plus: top %}
+<section class="panel gh-panel">
+  <h2 class="paneltitle">GITHUB</h2>
+
+  <p class="gh-summary">
+    <span class="gh-big">{{ gh.total }}</span> contributions in the last year
+    <span class="gh-range">[{{ gh.from | date: "%b %Y" }} → {{ gh.to | date: "%b %Y" }}]</span>
+  </p>
+
+  <svg class="gh-cal" viewBox="0 0 {{ svg_w }} {{ svg_h }}" role="img"
+       aria-label="{{ gh.total }} GitHub contributions in the last year">
+    {% for m in gh.months %}
+    <text class="gh-label" x="{{ m.x | times: step | plus: left }}" y="10">{{ m.label }}</text>
+    {% endfor %}
+    <text class="gh-label" x="0" y="{{ 1 | times: step | plus: top | plus: 9 }}">Mon</text>
+    <text class="gh-label" x="0" y="{{ 3 | times: step | plus: top | plus: 9 }}">Wed</text>
+    <text class="gh-label" x="0" y="{{ 5 | times: step | plus: top | plus: 9 }}">Fri</text>
+    {% for week in gh.weeks %}
+    {% assign x = forloop.index0 | times: step | plus: left %}
+    {% for d in week %}
+    <rect class="gh-l{{ d.level }}" x="{{ x }}" y="{{ d.weekday | times: step | plus: top }}" width="10" height="10" rx="2"><title>{{ d.count }} contribution{% if d.count != 1 %}s{% endif %} on {{ d.date | date: "%b %-d, %Y" }}</title></rect>
+    {% endfor %}
+    {% endfor %}
+  </svg>
+
+  <div class="gh-legend">
+    less
+    {% for i in (0..4) %}<span class="gh-swatch gh-l{{ i }}"></span>{% endfor %}
+    more
+  </div>
+
+  <div class="gh-cols">
+    <div>
+      <h3 class="gh-head">── stats ──</h3>
+      <table class="gh-stats">
+        <tr><td>public repos</td><td class="val">{{ gh.repos }}</td></tr>
+        <tr><td>stars earned</td><td class="val">{{ gh.stars }}</td></tr>
+        <tr><td>followers</td><td class="val">{{ gh.followers }}</td></tr>
+        <tr><td>current streak</td><td class="val">{{ gh.current_streak }}d</td></tr>
+        <tr><td>longest streak</td><td class="val">{{ gh.longest_streak }}d</td></tr>
+        {% if gh.best_day %}<tr><td>best day</td><td class="val">{{ gh.best_day.count }} on {{ gh.best_day.date | date: "%b %-d" }}</td></tr>{% endif %}
+      </table>
+    </div>
+    {% if gh.languages.size > 0 %}
+    <div>
+      <h3 class="gh-head">── languages ──</h3>
+      <table class="gh-stats">
+        {% for l in gh.languages %}
+        <tr>
+          <td>{{ l.name }}</td>
+          <td class="gh-bar">{{ l.bar }}</td>
+          <td class="val">{{ l.percent }}%</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    {% endif %}
+  </div>
+
+  <p class="reading-more">
+    <a href="https://github.com/{{ site.github_username }}">on github →</a>
+  </p>
+</section>
+{% endif %}

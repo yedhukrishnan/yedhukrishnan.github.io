@@ -189,6 +189,66 @@ tr.post-row.sel .proj-desc { color: var(--bar-fg); }
 
 .proj-more { color: var(--muted); font-size: 0.82rem; margin: 1rem 0 0; }
 
+/* ----------------------------- github ----------------------------- */
+
+.gh-panel {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  --gh-0: #1f2430;
+  --gh-1: #1e3a66;
+  --gh-2: #2a5caa;
+  --gh-3: #4f86d9;
+  --gh-4: #8fb6ff;
+}
+
+.gh-summary { margin: 0 0 0.8rem; color: var(--muted); font-size: 0.84rem; }
+.gh-big { color: var(--bright); font-weight: 700; font-size: 1rem; }
+.gh-range { float: right; }
+
+.gh-cal { display: block; width: 100%; height: auto; }
+.gh-label { fill: var(--muted); font-family: var(--mono); font-size: 9px; }
+
+.gh-l0 { fill: var(--gh-0); background: var(--gh-0); }
+.gh-l1 { fill: var(--gh-1); background: var(--gh-1); }
+.gh-l2 { fill: var(--gh-2); background: var(--gh-2); }
+.gh-l3 { fill: var(--gh-3); background: var(--gh-3); }
+.gh-l4 { fill: var(--gh-4); background: var(--gh-4); }
+
+.gh-legend {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 3px;
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.gh-swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.gh-legend .gh-swatch:first-child { margin-left: 0.3rem; }
+.gh-legend .gh-swatch:last-of-type { margin-right: 0.3rem; }
+
+.gh-cols {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 1.5rem;
+  margin-top: 0.6rem;
+}
+
+.gh-head {
+  color: var(--amber);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  margin: 0.6rem 0 0.4rem;
+}
+
+.gh-stats { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
+.gh-stats td { padding: 0.1rem 0; white-space: nowrap; }
+.gh-stats td.val { text-align: right; color: var(--green); padding-left: 0.6rem; }
+.gh-bar { color: var(--bar); padding-left: 0.6rem !important; letter-spacing: -0.05em; }
+
+.gh-panel .reading-more { margin-top: 1rem; }
+
 /* ------------------------------ post ------------------------------ */
 
 .post-view {
@@ -452,4 +512,7 @@ pre.term { color: var(--muted); }
   .keybar { display: none; }
   body { padding-bottom: 2rem; }
   .post-index td.val { display: none; }
+  .gh-cols { grid-template-columns: 1fr; gap: 0; }
+  .gh-range { float: none; display: block; }
+  .gh-panel { padding: 1rem; }
 }
