@@ -35,3 +35,5 @@ _data/github.json
 
 # Generated at build time by _scripts/fetch_wakatime.rb
 _data/wakatime.json
+
+CLAUDE.md
