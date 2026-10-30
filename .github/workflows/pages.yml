@@ -29,7 +29,7 @@ jobs:
 
       - uses: actions/configure-pages@v5
 
-      - name: Fetch Goodreads shelf
+      - name: Fetch Goodreads shelf and yearly stats
         run: ruby _scripts/fetch_goodreads.rb
 
       - name: Fetch GitHub stats

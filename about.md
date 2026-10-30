@@ -5,6 +5,7 @@ permalink: /about/
 github_stats: true
 wakatime: true
 writing_stats: true
+reading_stats: true
 ---
 
 Software engineer, reader, blogger, works from home.

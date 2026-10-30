@@ -1,0 +1,56 @@
+{% comment %}
+  Reading: books per year from Goodreads' Year in Books pages, plus this
+  year's numbers and recent finishes. Data comes from _scripts/fetch_goodreads.rb.
+{% endcomment %}
+{% assign rd = site.data.reading %}
+{% if rd and rd.years %}
+<section class="panel gh-panel rd-panel">
+  <h2 class="paneltitle">READING</h2>
+
+  <p class="gh-summary">
+    <span class="gh-big">{{ rd.books }}</span> books read in {{ rd.year }}
+    <span class="gh-range">[{{ rd.pages_label }} pages]</span>
+  </p>
+
+  <div class="gh-cols">
+    <div>
+      <h3 class="gh-head">── books per year ──</h3>
+      <table class="gh-stats">
+        {% for y in rd.years reversed %}
+        <tr>
+          <td>{{ y.year }}</td>
+          <td class="gh-bar">{{ y.bar }}</td>
+          <td class="val">{{ y.books }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <div>
+      <h3 class="gh-head">── totals ──</h3>
+      <table class="gh-stats">
+        <tr><td>this year</td><td class="val">{{ rd.books }} books</td></tr>
+        <tr><td>avg book length</td><td class="val">{{ rd.avg_pages }} pages</td></tr>
+        <tr><td>since {{ rd.since }}</td><td class="val">{{ rd.total_books }} books</td></tr>
+        <tr><td>best year</td><td class="val">{{ rd.best.year }} ({{ rd.best.books }})</td></tr>
+      </table>
+
+      {% if rd.recent.size > 0 %}
+      <h3 class="gh-head">── recently finished ──</h3>
+      <ul class="reading rd-recent">
+        {% for book in rd.recent %}
+        <li>
+          <a href="{{ book.url }}" target="_blank">{{ book.title }}</a>
+          {% if book.author != "" %}<span class="reading-author">{{ book.author }}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+
+  <p class="reading-more">
+    <a href="https://www.goodreads.com/user/year_in_books/{{ rd.year }}/{{ site.goodreads.user_id }}" target="_blank">year in books →</a>
+  </p>
+</section>
+{% endif %}
