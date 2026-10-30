@@ -249,6 +249,13 @@ tr.post-row.sel .proj-desc { color: var(--bar-fg); }
 
 .gh-panel .reading-more { margin-top: 1rem; }
 
+.fork-note {
+  margin: 2rem 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 /* ------------------------------ resume ----------------------------- */
 
 .cv-panel { margin-top: 2rem; padding: 1.25rem 1.5rem; }

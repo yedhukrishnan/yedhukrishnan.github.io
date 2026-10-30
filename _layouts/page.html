@@ -12,3 +12,11 @@ layout: default
 {% if page.wakatime %}{% include wakatime.html %}{% endif %}
 {% if page.writing_stats %}{% include writing_stats.html %}{% endif %}
 {% if page.reading_stats %}{% include reading_stats.html %}{% endif %}
+
+{% if page.fork_note %}
+<p class="fork-note">
+  Fork this website on
+  <a href="https://github.com/{{ site.github_username }}/{{ site.github_username }}.github.io" target="_blank">GitHub</a>
+  to build your own.
+</p>
+{% endif %}

@@ -6,6 +6,7 @@ github_stats: true
 wakatime: true
 writing_stats: true
 reading_stats: true
+fork_note: true
 ---
 
 Software engineer, reader, blogger, works from home.
