@@ -132,17 +132,16 @@ Only books with a "date read" are counted in Year in Books.
 1. Fork the repo and rename it to `<your-username>.github.io`, or use any repo name with a custom domain.
 2. Edit `_config.yml`:
    - site: `title`, `description`, `url`, `timezone`
-   - you: `author`, `twitter`, `social`, `github_username`
+   - you: `author`, `twitter`, `social`, `github_username`, `linkedin_username`
    - services: `goodreads`, `wakatime`, `giscus`, `goatcounter`. Remove any you don't use; its panel will just hide.
 3. Replace the content:
    - posts: `_posts/`
    - pages: `about.md`, `index.md`
    - data files: `_data/projects.yml`, `_data/resume.yml`
    - images: `assets/img/avatar/`, `assets/img/favicons/`
-4. Update the hard-coded LinkedIn link in the footer (`_layouts/default.html`).
-5. Update or delete `CNAME` (it holds this site's custom domain).
-6. In the repo's **Settings → Pages**, set **Source** to **GitHub Actions**.
-7. Push to `main`. The workflow fetches the data, builds and deploys.
+4. Update or delete `CNAME` (it holds this site's custom domain).
+5. In the repo's **Settings → Pages**, set **Source** to **GitHub Actions**.
+6. Push to `main`. The workflow fetches the data, builds and deploys.
 
 Colors and fonts are CSS variables at the top of `assets/css/style.css`.
 

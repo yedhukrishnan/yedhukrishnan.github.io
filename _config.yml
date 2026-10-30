@@ -23,6 +23,9 @@ social_preview_image: /assets/img/avatar/yedhu.jpg
 
 github_username: yedhukrishnan
 
+# Footer LinkedIn link: the name in your profile URL, linkedin.com/in/<name>
+linkedin_username: yedhukrishnan
+
 # WakaTime panel on the About page: JSON links from wakatime.com/share/embed
 # (Format: JSON), one per chart. Remove a line to hide that list.
 # Names under `hide` never appear in any list; their share is counted in "Other".
