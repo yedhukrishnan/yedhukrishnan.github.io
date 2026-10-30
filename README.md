@@ -85,7 +85,13 @@ wakatime:
   editors: https://wakatime.com/share/@<you>/<id>.json
   hide:          # never shown; their share counts toward "Other"
     - Text
+  allow:         # optional: the only entries a list may show
+    editors:
+      - Claude Code
+      - Neovim
 ```
+
+With `allow`, anything not named (browsers, Slack, ...) is dropped and the remaining entries are rescaled to 100%.
 
 The panel shows the `languages` and `editors` lists. Each list shows the top 8 entries and folds the rest into "Other".
 

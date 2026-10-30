@@ -18,12 +18,21 @@ def row(name, pct, color)
     "bar" => ("█" * filled) + ("░" * (BAR_WIDTH - filled)) }
 end
 
-def fetch_chart(url, hidden)
+def fetch_chart(url, hidden, allowed)
   res = Net::HTTP.get_response(URI(url))
   raise "HTTP #{res.code}" unless res.is_a?(Net::HTTPSuccess)
 
   rows = JSON.parse(res.body)["data"] or raise "no data"
   rows = rows.sort_by { |r| -r["percent"].to_f }
+
+  # An allow list drops everything else (browsers, chat apps, ...) and rescales
+  # the rest to 100%, so the list shows each tool's share of coding time only.
+  if allowed
+    rows = rows.select { |r| allowed.include?(r["name"].to_s.downcase) }
+    total = rows.sum { |r| r["percent"].to_f }
+    raise "no allowed entries" if total.zero?
+    rows = rows.map { |r| r.merge("percent" => r["percent"].to_f * 100 / total) }
+  end
 
   # Hidden names and the tail are folded into "Other", so percentages stay true.
   top = rows.reject { |r| r["name"] == "Other" || hidden.include?(r["name"].to_s.downcase) }.first(MAX_ROWS)
@@ -37,11 +46,14 @@ end
 config = YAML.load_file(File.expand_path("../_config.yml", __dir__))
 charts = config["wakatime"].is_a?(Hash) ? config["wakatime"].dup : {}
 hidden = Array(charts.delete("hide")).map { |n| n.to_s.strip.downcase }
+allow = charts.delete("allow")
+allow = {} unless allow.is_a?(Hash)
 
 data = {}
 charts.each do |name, url|
   next if url.to_s.strip.empty?
-  data[name] = fetch_chart(url.to_s.strip, hidden)
+  allowed = allow[name] && Array(allow[name]).map { |n| n.to_s.strip.downcase }
+  data[name] = fetch_chart(url.to_s.strip, hidden, allowed)
 rescue StandardError => e
   warn "wakatime: #{name} fetch failed (#{e.message})"
 end
