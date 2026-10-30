@@ -269,6 +269,29 @@ tr.post-row.sel .proj-desc { color: var(--bar-fg); }
 .cv-skills td { white-space: normal; padding: 0.15rem 0; vertical-align: top; }
 .cv-skills td.cv-group { color: var(--amber); width: 7rem; padding-right: 1rem; }
 
+/* ---------------------------- wakatime ---------------------------- */
+
+.wk-stack {
+  display: flex;
+  height: 10px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--gh-0);
+  margin: 0 0 0.6rem;
+}
+.wk-stack span { display: block; height: 100%; }
+.wk-stack span + span { box-shadow: inset 1px 0 0 var(--panel); }
+
+.wk-list { max-width: 32rem; }
+.wk-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  margin-right: 0.5rem;
+  vertical-align: 0.05em;
+}
+
 /* ------------------------------ post ------------------------------ */
 
 .post-view {
@@ -296,7 +319,7 @@ tr.post-row.sel .proj-desc { color: var(--bar-fg); }
 /* -------------------------- tags & filters ------------------------- */
 
 .filter-group {
-  margin: 0 0 0.9rem;
+  margin: 0 0 0.6rem;
   line-height: 2.1;
 }
 

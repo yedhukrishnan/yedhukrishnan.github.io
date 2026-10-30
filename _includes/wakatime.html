@@ -1,0 +1,33 @@
+{% assign wk = site.data.wakatime %}
+{% if wk.languages or wk.editors %}
+<section class="panel gh-panel wk-panel">
+  <h2 class="paneltitle">WAKATIME</h2>
+
+  <p class="gh-summary">time spent coding, by language and editor</p>
+
+  {% assign lists = "languages,editors" | split: "," %}
+  {% for key in lists %}
+  {% assign rows = wk[key] %}
+  {% if rows %}
+  <h3 class="gh-head">── {{ key }} ──</h3>
+  <div class="wk-stack" role="img"
+       aria-label="{{ key }}: {% for l in rows %}{{ l.name }} {{ l.percent }}%{% unless forloop.last %}, {% endunless %}{% endfor %}">
+    {% for l in rows %}<span style="width: {{ l.percent }}%; background: {{ l.color }}" title="{{ l.name }} {{ l.percent }}%"></span>{% endfor %}
+  </div>
+  <table class="gh-stats wk-list">
+    {% for l in rows %}
+    <tr>
+      <td><span class="wk-dot" style="background: {{ l.color }}"></span>{{ l.name }}</td>
+      <td class="gh-bar">{{ l.bar }}</td>
+      <td class="val">{{ l.percent }}%</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+  {% endfor %}
+
+  <p class="reading-more">
+    <a href="https://wakatime.com" target="_blank">via wakatime →</a>
+  </p>
+</section>
+{% endif %}

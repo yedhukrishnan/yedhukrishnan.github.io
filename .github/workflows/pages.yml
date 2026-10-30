@@ -5,7 +5,7 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: "30 0 * * *" # daily, to refresh the Goodreads shelf and GitHub stats
+    - cron: "30 0 * * *" # daily, to refresh the Goodreads shelf, GitHub stats and WakaTime stats
 
 permissions:
   contents: read
@@ -36,6 +36,9 @@ jobs:
         run: ruby _scripts/fetch_github.rb
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fetch WakaTime stats
+        run: ruby _scripts/fetch_wakatime.rb
 
       - name: Build site
         run: bundle exec jekyll build

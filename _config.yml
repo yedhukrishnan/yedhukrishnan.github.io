@@ -23,6 +23,17 @@ social_preview_image: /assets/img/avatar/yedhu.jpg
 
 github_username: yedhukrishnan
 
+# WakaTime panel on the About page: JSON links from wakatime.com/share/embed
+# (Format: JSON), one per chart. Remove a line to hide that list.
+# Names under `hide` never appear in any list; their share is counted in "Other".
+wakatime:
+  languages: https://wakatime.com/share/@ce00ae1b-92c6-4a26-ab09-b905af578f27/d4e0507c-fd28-4a0f-8cb2-b4780c9be6dc.json
+  editors: https://wakatime.com/share/@ce00ae1b-92c6-4a26-ab09-b905af578f27/6e120a38-47f0-49b9-b418-02a9b2b1719f.json
+  hide:
+    - Text
+    - JSON
+    - YAML
+
 # Analytics (GoatCounter) — set to your site code, e.g. "yedhu" for yedhu.goatcounter.com
 goatcounter: yedhu
 

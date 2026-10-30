@@ -3,6 +3,7 @@ layout: page
 title: about
 permalink: /about/
 github_stats: true
+wakatime: true
 ---
 
 Software engineer, reader, blogger, works from home.
