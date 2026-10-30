@@ -137,3 +137,10 @@ Only books with a "date read" are counted in Year in Books.
 7. Push to `main`. The workflow fetches the data, builds and deploys.
 
 Colors and fonts are CSS variables at the top of `assets/css/style.css`.
+
+## License
+
+The code (theme, layouts, scripts and styles) is licensed under the [MIT License](LICENSE).
+
+The blog posts in `_posts/` and the images in `assets/img/` are © Yedhu Krishnan,
+all rights reserved. Sharing links to them is always welcome.
