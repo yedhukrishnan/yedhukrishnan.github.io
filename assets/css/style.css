@@ -292,6 +292,13 @@ tr.post-row.sel .proj-desc { color: var(--bar-fg); }
   vertical-align: 0.05em;
 }
 
+/* ----------------------------- writing ---------------------------- */
+
+.wr-cols { grid-template-columns: 1.2fr 1fr; align-items: start; }
+.wr-cal { display: block; width: 100%; max-width: 360px; height: auto; }
+.wr-count { fill: var(--green); }
+.wr-panel .gh-head { margin-top: 0; }
+
 /* ------------------------------ post ------------------------------ */
 
 .post-view {
