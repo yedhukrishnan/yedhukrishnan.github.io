@@ -37,7 +37,7 @@ wakatime:
 # Analytics (GoatCounter) — set to your site code, e.g. "yedhu" for yedhu.goatcounter.com
 goatcounter: yedhu
 
-# Goodreads "currently reading" panel on the home page.
+# Goodreads: "currently reading" on the home page and the Reading panel on About.
 # user_id is the number in your profile URL: goodreads.com/user/show/<user_id>-name
 goodreads:
   user_id: "37922611"
