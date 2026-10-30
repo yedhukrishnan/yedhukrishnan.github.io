@@ -1,9 +1,9 @@
 {% assign wk = site.data.wakatime %}
 {% if wk.languages or wk.editors %}
 <section class="panel gh-panel wk-panel">
-  <h2 class="paneltitle">WAKATIME</h2>
+  <h2 class="paneltitle">TOOLBOX</h2>
 
-  <p class="gh-summary">time spent coding, by language and editor</p>
+  <p class="gh-summary">share of coding time, by language and editor</p>
 
   {% assign lists = "languages,editors" | split: "," %}
   {% for key in lists %}
