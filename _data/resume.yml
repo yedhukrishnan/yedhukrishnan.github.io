@@ -30,6 +30,21 @@ experience:
       - Ran Hacknight and Coderetreat events, interviewed candidates and trained new joiners.
 
 projects:
+  - name: yedhu.me
+    url: https://github.com/yedhukrishnan/yedhukrishnan.github.io
+    year: 2026
+    tech: Jekyll · Ruby
+    desc: This blog. A terminal-style Jekyll theme with live panels for GitHub, WakaTime and Goodreads data, refreshed daily.
+  - name: Time Tracker
+    url: https://github.com/yedhukrishnan/time-tracker
+    year: 2026
+    tech: Swift · macOS
+    desc: A keyboard-first time tracker that lives in the macOS menu bar. One global hotkey starts or switches tasks, and slash commands handle the rest.
+  - name: Journal Chat
+    url: https://github.com/yedhukrishnan/journal-chat
+    year: 2026
+    tech: Python · Ollama · RAG
+    desc: A fully local, private command-line tool for chatting with your journal entries, using retrieval-augmented generation on local models.
   - name: Image Captioning System
     year: 2018
     tech: Python · Keras · TensorFlow

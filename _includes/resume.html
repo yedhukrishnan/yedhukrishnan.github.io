@@ -25,7 +25,7 @@
   <table class="post-index projects-table">
     {% for p in r.projects %}
     <tr>
-      <td><span class="cv-role">{{ p.name }}</span><div class="proj-desc">{{ p.desc }}</div></td>
+      <td><span class="cv-role">{% if p.url %}<a href="{{ p.url }}" target="_blank">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</span><div class="proj-desc">{{ p.desc }}</div></td>
       <td class="val">[{{ p.tech }} · {{ p.year }}]</td>
     </tr>
     {% endfor %}
