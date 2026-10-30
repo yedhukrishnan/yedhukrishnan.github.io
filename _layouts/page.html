@@ -2,7 +2,7 @@
 layout: default
 ---
 <article class="panel post-view">
-  <h2 class="paneltitle">{{ page.title | upcase }}</h2>
+  <h2 class="paneltitle">{{ page.heading | default: page.title | upcase }}</h2>
   <div class="post-content">
     {{ content }}
   </div>
