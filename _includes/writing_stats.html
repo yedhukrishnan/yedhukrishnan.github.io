@@ -1,13 +1,13 @@
 {% comment %}
   Writing activity: a years x months grid of posts, plus totals.
   Built from the site's own posts, so it needs no outside data.
+  Only years with posts get a row.
 {% endcomment %}
 {% assign posts = site.posts %}
 {% if posts.size > 0 %}
 {% assign by_month = posts | group_by_exp: "p", "p.date | date: '%Y-%m'" %}
 {% assign by_year = posts | group_by_exp: "p", "p.date | date: '%Y'" %}
 {% assign first_year = posts.last.date | date: "%Y" | plus: 0 %}
-{% assign last_year = site.time | date: "%Y" | plus: 0 %}
 
 {% assign words = 0 %}
 {% for p in posts %}{% assign n = p.content | strip_html | number_of_words %}{% assign words = words | plus: n %}{% endfor %}
@@ -17,9 +17,8 @@
 {% for y in by_year %}{% if y.size > best_year.size %}{% assign best_year = y %}{% endif %}{% endfor %}
 
 {% assign step = 13 %}{% assign left = 34 %}{% assign top = 16 %}
-{% assign rows = last_year | minus: first_year | plus: 1 %}
 {% assign svg_w = 12 | times: step | plus: left | plus: 22 %}
-{% assign svg_h = rows | times: step | plus: top %}
+{% assign svg_h = by_year.size | times: step | plus: top %}
 {% assign count_x = 12 | times: step | plus: left | plus: 4 %}
 
 <section class="panel gh-panel wr-panel">
@@ -31,30 +30,27 @@
 
   <div class="gh-cols wr-cols">
     <svg class="wr-cal" viewBox="0 0 {{ svg_w }} {{ svg_h }}" role="img"
-         aria-label="{{ posts.size }} blog posts by month, {{ first_year }} to {{ last_year }}">
+         aria-label="{{ posts.size }} blog posts by month, {{ first_year }} to {{ posts.first.date | date: "%Y" }}">
       {% assign letters = "J,F,M,A,M,J,J,A,S,O,N,D" | split: "," %}
       {% for l in letters %}
       <text class="gh-label" x="{{ forloop.index0 | times: step | plus: left | plus: 2 }}" y="10">{{ l }}</text>
       {% endfor %}
 
-      {% for year in (first_year..last_year) %}
-      {% assign row = forloop.index0 %}
-      {% assign y = row | times: step | plus: top %}
-      {% assign year_s = year | append: "" %}
-      <text class="gh-label" x="0" y="{{ y | plus: 9 }}">{{ year }}</text>
-
+      {% comment %} Oldest year first; years without posts are skipped. {% endcomment %}
+      {% assign years = by_year | map: "name" | sort %}
+      {% for year_s in years %}
+      {% assign y = forloop.index0 | times: step | plus: top %}
+      {% assign yg = by_year | where: "name", year_s | first %}
+      <text class="gh-label" x="0" y="{{ y | plus: 9 }}">{{ year_s }}</text>
       {% for m in (1..12) %}
       {% assign key = m | prepend: "0" | slice: -2, 2 | prepend: "-" | prepend: year_s %}
-      {% assign count = 0 %}
-      {% for g in by_month %}{% if g.name == key %}{% assign count = g.size %}{% endif %}{% endfor %}
+      {% assign mg = by_month | where: "name", key | first %}
+      {% if mg %}{% assign count = mg.size %}{% else %}{% assign count = 0 %}{% endif %}
       {% assign level = count %}{% if level > 4 %}{% assign level = 4 %}{% endif %}
       {% assign mname = key | append: "-01" | date: "%b %Y" %}
       <rect class="gh-l{{ level }}" x="{{ m | minus: 1 | times: step | plus: left }}" y="{{ y }}" width="10" height="10" rx="2"><title>{{ count }} post{% if count != 1 %}s{% endif %} in {{ mname }}</title></rect>
       {% endfor %}
-
-      {% assign year_count = 0 %}
-      {% for g in by_year %}{% if g.name == year_s %}{% assign year_count = g.size %}{% endif %}{% endfor %}
-      {% if year_count > 0 %}<text class="gh-label wr-count" x="{{ count_x }}" y="{{ y | plus: 9 }}">{{ year_count }}</text>{% endif %}
+      <text class="gh-label wr-count" x="{{ count_x }}" y="{{ y | plus: 9 }}">{{ yg.size }}</text>
       {% endfor %}
     </svg>
 
