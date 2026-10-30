@@ -1,5 +1,7 @@
 # yedhu.me
 
+**Live site: [yedhu.me](https://yedhu.me)**
+
 Personal blog built with Jekyll and a hand-rolled, terminal-style dark theme. The posts list supports keyboard navigation (`j`/`k` or arrows, Enter to open, Esc to go home).
 
 > **Note:** The site itself (theme, layouts, panels and build scripts) was built with the help of [Claude](https://claude.ai). The blog posts are my own, written by me.
