@@ -84,7 +84,7 @@ wakatime:
   languages: https://wakatime.com/share/@<you>/<id>.json
   editors: https://wakatime.com/share/@<you>/<id>.json
   operating_systems: https://wakatime.com/share/@<you>/<id>.json
-  hide:          # never shown; their share counts toward "Other"
+  hide:          # dropped from every list
     - Text
   allow:         # optional: the only entries a list may show
     editors:
@@ -92,7 +92,7 @@ wakatime:
       - Neovim
 ```
 
-With `allow`, anything not named (browsers, Slack, ...) is dropped and the remaining entries are rescaled to 100%.
+WakaTime's own "Other" entry (time it couldn't classify) and anything under `hide` are dropped, and the remaining entries are rescaled to 100%. With `allow`, anything not named (browsers, Slack, ...) is dropped as well.
 
 The panel shows the `languages`, `editors` and `operating_systems` lists. Each list shows the top 8 entries and folds the rest into "Other".
 

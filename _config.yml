@@ -28,7 +28,7 @@ linkedin_username: yedhukrishnan
 
 # WakaTime panel on the About page: JSON links from wakatime.com/share/embed
 # (Format: JSON), one per chart. Remove a line to hide that list.
-# Names under `hide` never appear in any list; their share is counted in "Other".
+# Names under `hide` are dropped from every list and the rest rescaled to 100%.
 # Under `allow`, a list can name the only entries it shows; everything else is
 # dropped and the rest rescaled to 100%. Names match case-insensitively.
 wakatime:

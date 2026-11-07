@@ -25,17 +25,17 @@ def fetch_chart(url, hidden, allowed)
   rows = JSON.parse(res.body)["data"] or raise "no data"
   rows = rows.sort_by { |r| -r["percent"].to_f }
 
-  # An allow list drops everything else (browsers, chat apps, ...) and rescales
-  # the rest to 100%, so the list shows each tool's share of coding time only.
-  if allowed
-    rows = rows.select { |r| allowed.include?(r["name"].to_s.downcase) }
-    total = rows.sum { |r| r["percent"].to_f }
-    raise "no allowed entries" if total.zero?
-    rows = rows.map { |r| r.merge("percent" => r["percent"].to_f * 100 / total) }
-  end
+  # WakaTime's own "Other" (time it couldn't classify) and hidden names are
+  # dropped. An allow list also drops everything else (browsers, chat apps, ...).
+  # What's left is rescaled to 100%.
+  rows = rows.reject { |r| r["name"] == "Other" || hidden.include?(r["name"].to_s.downcase) }
+  rows = rows.select { |r| allowed.include?(r["name"].to_s.downcase) } if allowed
+  total = rows.sum { |r| r["percent"].to_f }
+  raise "no entries left" if total.zero?
+  rows = rows.map { |r| r.merge("percent" => r["percent"].to_f * 100 / total) }
 
-  # Hidden names and the tail are folded into "Other", so percentages stay true.
-  top = rows.reject { |r| r["name"] == "Other" || hidden.include?(r["name"].to_s.downcase) }.first(MAX_ROWS)
+  # Entries past the top rows are folded into "Other", so percentages stay true.
+  top = rows.first(MAX_ROWS)
   out = top.map { |r| row(r["name"], r["percent"].to_f, r["color"]) }
   rest = 100.0 - top.sum { |r| r["percent"].to_f }
   out << row("Other", rest, OTHER_COLOR) if rest >= 0.1
