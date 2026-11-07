@@ -1,17 +1,17 @@
 {% assign wk = site.data.wakatime %}
-{% if wk.languages or wk.editors %}
+{% if wk.languages or wk.editors or wk.operating_systems %}
 <section class="panel gh-panel wk-panel">
   <h2 class="paneltitle">TOOLBOX</h2>
 
-  <p class="gh-summary">share of coding time, by language and editor</p>
+  <p class="gh-summary">share of coding time, by language, editor and operating system</p>
 
-  {% assign lists = "languages,editors" | split: "," %}
+  {% assign lists = "languages,editors,operating_systems" | split: "," %}
   {% for key in lists %}
   {% assign rows = wk[key] %}
   {% if rows %}
-  <h3 class="gh-head">── {{ key }} ──</h3>
+  <h3 class="gh-head">── {{ key | replace: '_', ' ' }} ──</h3>
   <div class="wk-stack" role="img"
-       aria-label="{{ key }}: {% for l in rows %}{{ l.name }} {{ l.percent }}%{% unless forloop.last %}, {% endunless %}{% endfor %}">
+       aria-label="{{ key | replace: '_', ' ' }}: {% for l in rows %}{{ l.name }} {{ l.percent }}%{% unless forloop.last %}, {% endunless %}{% endfor %}">
     {% for l in rows %}<span style="width: {{ l.percent }}%; background: {{ l.color }}" title="{{ l.name }} {{ l.percent }}%"></span>{% endfor %}
   </div>
   <table class="gh-stats wk-list">

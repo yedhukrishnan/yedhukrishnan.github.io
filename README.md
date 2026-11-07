@@ -18,7 +18,7 @@ You're welcome to fork it and make it your own. This README explains how the pie
 
 ![A post](.github/screenshots/post.png)
 
-**About:** live panels for GitHub contributions and WakaTime languages and editors...
+**About:** live panels for GitHub contributions and WakaTime languages, editors and operating systems...
 
 ![Contributions and Toolbox panels](.github/screenshots/about-contributions-toolbox.png)
 
@@ -83,6 +83,7 @@ It needs a token. In GitHub Actions the built-in `GITHUB_TOKEN` is enough, so th
 wakatime:
   languages: https://wakatime.com/share/@<you>/<id>.json
   editors: https://wakatime.com/share/@<you>/<id>.json
+  operating_systems: https://wakatime.com/share/@<you>/<id>.json
   hide:          # never shown; their share counts toward "Other"
     - Text
   allow:         # optional: the only entries a list may show
@@ -93,7 +94,7 @@ wakatime:
 
 With `allow`, anything not named (browsers, Slack, ...) is dropped and the remaining entries are rescaled to 100%.
 
-The panel shows the `languages` and `editors` lists. Each list shows the top 8 entries and folds the rest into "Other".
+The panel shows the `languages`, `editors` and `operating_systems` lists. Each list shows the top 8 entries and folds the rest into "Other".
 
 Privacy note: these lists update automatically, so any new language or editor you use will appear. Use `hide` for anything you'd rather keep private, or exclude private projects in WakaTime itself. The links only expose the chart they belong to, not your dashboard.
 
