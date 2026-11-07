@@ -289,7 +289,13 @@ tr.post-row.sel .proj-desc { color: var(--bar-fg); }
 .wk-stack span { display: block; height: 100%; }
 .wk-stack span + span { box-shadow: inset 1px 0 0 var(--panel); }
 
-.wk-list { max-width: 32rem; }
+/* Same column widths in every list, so the bars line up across sections */
+.wk-list { table-layout: fixed; }
+.wk-list td:first-child { width: 16ch; overflow: hidden; text-overflow: ellipsis; }
+.wk-list td.val { width: 9ch; }
+/* Text bar that fills the cell: a row of ░ with a row of █ on top, cut to the percentage */
+.wk-text { display: block; position: relative; overflow: hidden; width: 50%; margin: 0 auto; }
+.wk-text span { position: absolute; top: 0; left: 0; overflow: hidden; }
 .wk-dot {
   display: inline-block;
   width: 8px;
@@ -574,4 +580,7 @@ pre.term { color: var(--muted); }
   .gh-panel { padding: 1rem; }
   .cv-panel { padding: 1rem; }
   .cv-dates { float: none; display: block; }
+  .wk-list td:first-child { width: 14ch; }
+  .wk-list td.val { width: 7ch; }
+  .wk-text { width: 100%; }
 }

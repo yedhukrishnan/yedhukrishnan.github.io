@@ -1,4 +1,7 @@
 {% assign wk = site.data.wakatime %}
+{% comment %} Long runs of █ and ░, clipped by CSS to the cell width and the percentage {% endcomment %}
+{% capture fill %}{% for i in (1..150) %}█{% endfor %}{% endcapture %}
+{% capture track %}{% for i in (1..150) %}░{% endfor %}{% endcapture %}
 {% if wk.languages or wk.editors or wk.operating_systems %}
 <section class="panel gh-panel wk-panel">
   <h2 class="paneltitle">TOOLBOX</h2>
@@ -18,7 +21,7 @@
     {% for l in rows %}
     <tr>
       <td><span class="wk-dot" style="background: {{ l.color }}"></span>{{ l.name }}</td>
-      <td class="gh-bar">{{ l.bar }}</td>
+      <td class="gh-bar wk-bar"><span class="wk-text">{{ track }}<span style="width: {{ l.percent }}%">{{ fill }}</span></span></td>
       <td class="val">{{ l.percent }}%</td>
     </tr>
     {% endfor %}

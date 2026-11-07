@@ -8,14 +8,11 @@ require "net/http"
 require "yaml"
 
 OUT = File.expand_path("../_data/wakatime.json", __dir__)
-BAR_WIDTH = 20
 MAX_ROWS = 8
 OTHER_COLOR = "#6b7385"
 
 def row(name, pct, color)
-  filled = (pct / 100 * BAR_WIDTH).round
-  { "name" => name, "percent" => pct.round(1), "color" => color || OTHER_COLOR,
-    "bar" => ("█" * filled) + ("░" * (BAR_WIDTH - filled)) }
+  { "name" => name, "percent" => pct.round(1), "color" => color || OTHER_COLOR }
 end
 
 def fetch_chart(url, hidden, allowed)
