@@ -42,7 +42,6 @@
         <tr><td>followers</td><td class="val">{{ gh.followers }}</td></tr>
         <tr><td>current streak</td><td class="val">{{ gh.current_streak }}d</td></tr>
         <tr><td>longest streak</td><td class="val">{{ gh.longest_streak }}d</td></tr>
-        {% if gh.best_day %}<tr><td>best day</td><td class="val">{{ gh.best_day.count }} on {{ gh.best_day.date | date: "%b %-d" }}</td></tr>{% endif %}
       </table>
     </div>
     {% if gh.languages.size > 0 %}

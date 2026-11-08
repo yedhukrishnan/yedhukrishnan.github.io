@@ -108,7 +108,6 @@ begin
   end
 
   current, longest = streaks(days)
-  best = days.max_by { |d| d["count"] }
 
   write({
     "total" => calendar["totalContributions"],
@@ -119,7 +118,6 @@ begin
     "followers" => user["followers"]["totalCount"],
     "current_streak" => current,
     "longest_streak" => longest,
-    "best_day" => best && { "date" => best["date"], "count" => best["count"] },
     "languages" => languages,
     "months" => months,
     "weeks" => weeks
