@@ -15,7 +15,7 @@ def row(name, pct, color)
   { "name" => name, "percent" => pct.round(1), "color" => color || OTHER_COLOR }
 end
 
-def fetch_chart(url, hidden, allowed)
+def fetch_chart(url, hidden, allowed, renames)
   res = Net::HTTP.get_response(URI(url))
   raise "HTTP #{res.code}" unless res.is_a?(Net::HTTPSuccess)
 
@@ -33,7 +33,7 @@ def fetch_chart(url, hidden, allowed)
 
   # Entries past the top rows are folded into "Other", so percentages stay true.
   top = rows.first(MAX_ROWS)
-  out = top.map { |r| row(r["name"], r["percent"].to_f, r["color"]) }
+  out = top.map { |r| row(renames.fetch(r["name"].to_s.downcase, r["name"]), r["percent"].to_f, r["color"]) }
   rest = 100.0 - top.sum { |r| r["percent"].to_f }
   out << row("Other", rest, OTHER_COLOR) if rest >= 0.1
   raise "empty" if out.empty?
@@ -45,12 +45,15 @@ charts = config["wakatime"].is_a?(Hash) ? config["wakatime"].dup : {}
 hidden = Array(charts.delete("hide")).map { |n| n.to_s.strip.downcase }
 allow = charts.delete("allow")
 allow = {} unless allow.is_a?(Hash)
+renames = charts.delete("rename")
+renames = {} unless renames.is_a?(Hash)
+renames = renames.to_h { |k, v| [k.to_s.strip.downcase, v.to_s] }
 
 data = {}
 charts.each do |name, url|
   next if url.to_s.strip.empty?
   allowed = allow[name] && Array(allow[name]).map { |n| n.to_s.strip.downcase }
-  data[name] = fetch_chart(url.to_s.strip, hidden, allowed)
+  data[name] = fetch_chart(url.to_s.strip, hidden, allowed, renames)
 rescue StandardError => e
   warn "wakatime: #{name} fetch failed (#{e.message})"
 end
