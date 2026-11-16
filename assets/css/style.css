@@ -388,7 +388,6 @@ tr.post-row.sel .proj-desc { color: var(--bar-fg); }
   margin: 0 0 0.8rem;
 }
 
-.post-content { max-width: 42rem; }
 
 .post-content h2,
 .post-content h3,
