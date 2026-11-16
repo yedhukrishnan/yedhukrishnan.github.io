@@ -10,7 +10,7 @@ I started reading The Pragmatic Programmer: From Journeyman to Master when I was
 
 In March 2014, Dave Thomas and Corey Haines spoke at Agile India 2014. They were invited as guests to the [Bangalore Ruby Users Group meet-up](https://www.meetup.com/bangalore-ruby-users-group/events/151655272/){:target="_blank"}. My colleagues and I had the chance to listen to Dave’s talk, "Elixir Language." The language was new and functional, and the talk was interesting. Later, I tried Elixir and wrote a [few posts](https://www.yedhukrishnan.in/search/label/Elixir){:target="_blank"} on that too.
 
-After the talk, there was a small, informal session to meet and introduce ourselves. As an introvert, I didn’t plan to chat with him. But with a little push and help from my colleagues, I told him I was reading The Pragmatic Programmer and writing about it on my blog. I was hesitant, and a little scared too. But Dave's response was encouraging. He appreciated it and asked me to continue writing. He also asked me to email him a link to my blog.
+After the talk, there was a small, informal session to meet and introduce ourselves. As an introvert, I didn’t plan to chat with him. But with a little push and help from my colleagues, I told him I was reading [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/){:target="_blank"} and writing about it on my blog. I was hesitant, and a little scared too. But Dave's response was encouraging. He appreciated it and asked me to continue writing. He also asked me to email him a link to my blog.
 
 I wasn’t expecting much. I was just happy to meet him, tell him about the blog, and have a [photo with him](https://x.com/multunus/status/440356945153622016){:target="_blank"}, with my colleagues who had pushed me to say hello.
 
@@ -34,10 +34,10 @@ Here is another practice that stood out while reading the book:
 
 > **Spread Your Skills**: Share what you learn to help others and yourself.
 
-Twelve years ago, this is what I was doing: trying to share what I was reading, and Dave Thomas gave me a motivational boost by sharing my blog. The book nudged me to pick it back up. The time I was writing was when I was learning the most, trying to explain the concepts I read. It gave structure to the explanations in my head and helped me turn them into organized words.
+Twelve years ago, this is what I was doing: trying to share what I was reading, and Dave Thomas gave me a motivational boost by sharing my blog. The book nudged me to write more often. The time I was writing was when I was learning the most, trying to explain the concepts I read. It gave structure to the explanations in my head and helped me turn them into organized words.
 
 Reading is easy, but writing about it isn't. Earlier in my career, I did that confidently and effortlessly. I was new, and I wasn't afraid to ask questions or share even simple things I learned. But now, when I am more self-aware and second-guess what I write, *Spread Your Skills* is exactly what I needed to hear.
 
-Sometimes a reminder is all you need: Ask simple questions, and write about simple stuff. Now I'm getting back into the habit to help myself and others. It doesn’t need to be complex. I don't need to use big words. It just needs to be simple and thoughtful.
+Sometimes a reminder is all you need: Ask simple questions, and write about simple stuff. Now I'm making it a habit again to help myself and others. It doesn’t need to be complex. I don't need to use big words. It just needs to be simple and thoughtful.
 
 
