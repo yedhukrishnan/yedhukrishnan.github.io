@@ -10,6 +10,12 @@
 
 - section: "Vibe Coded"
   items:
+    - name: jekyll-panel-tui
+      url: https://github.com/yedhukrishnan/jekyll-panel-tui
+      lang: Jekyll
+      desc: "A dark, terminal-style Jekyll theme with keyboard navigation and live GitHub, WakaTime and Goodreads panels. The theme behind this blog."
+      status: active
+
     - name: time-tracker
       url: https://github.com/yedhukrishnan/mac-simple-time-tracker
       lang: Swift
