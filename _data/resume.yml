@@ -35,6 +35,11 @@ projects:
     year: 2026
     tech: Jekyll · Ruby
     desc: This blog. A terminal-style Jekyll theme with live panels for GitHub, WakaTime and Goodreads data, refreshed daily.
+  - name: jekyll-panel-tui
+    url: https://github.com/yedhukrishnan/jekyll-panel-tui
+    year: 2026
+    tech: Jekyll · Ruby · JavaScript
+    desc: The open source theme behind this blog. A dark, terminal-style Jekyll theme with keyboard navigation and live GitHub, WakaTime and Goodreads panels, ready to use as a template.
   - name: Time Tracker
     url: https://github.com/yedhukrishnan/time-tracker
     year: 2026
