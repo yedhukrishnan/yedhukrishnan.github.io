@@ -40,6 +40,11 @@ projects:
     year: 2026
     tech: Jekyll · Ruby · JavaScript
     desc: The open source theme behind this blog. A dark, terminal-style Jekyll theme with keyboard navigation and live GitHub, WakaTime and Goodreads panels, ready to use as a template.
+  - name: SOAP Client
+    url: https://github.com/yedhukrishnan/soap-client
+    year: 2026
+    tech: Rust · Tauri · Svelte · TypeScript
+    desc: A lightweight desktop app for testing SOAP web services. Imports WSDLs and their schemas, generates sample requests, and supports environments, assertions and WS-Security, with secrets kept in the macOS Keychain behind Touch ID. Released as a signed, notarized macOS app.
   - name: Time Tracker
     url: https://github.com/yedhukrishnan/time-tracker
     year: 2026
