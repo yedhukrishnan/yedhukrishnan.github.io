@@ -63,18 +63,6 @@ projects:
     year: 2018
     tech: Python · TensorFlow
     desc: A checkers engine built on deep neural networks and Monte Carlo Tree Search, trained on past tournament games. M.Tech course project.
-  - name: Aconex Field
-    year: 2016
-    tech: Ruby · Cordova · Angular.js
-    desc: An app for structured and unstructured site inspections in construction.
-  - name: bidPress
-    year: 2015
-    tech: Rails · Backbone.js · Phoenix
-    desc: A site for US customers to design and order custom printed T-shirts, with a Phoenix service for price calculation.
-  - name: EyzUp
-    year: 2015
-    tech: Android · Rails
-    desc: An Android app that tracks phone and app usage, sets limits, and lets parents monitor their children's devices remotely.
   - name: One MDM
     year: 2014
     tech: Android · Sails.js
@@ -83,18 +71,6 @@ projects:
     year: 2014
     tech: Sails.js
     desc: An example Sails.js app showing authentication and authorization with Passport, made while contributing to Sails.js.
-  - name: MDM Solution for Context Media Health
-    year: 2013
-    tech: Android · Rails
-    desc: Mobile device management for Context Media Health, a Chicago healthcare company.
-  - name: Checkers using Artificial Neural Networks
-    year: 2013
-    tech: Python
-    desc: A checkers player in Python whose neural network was trained on 250,000+ samples to predict moves. Won the best CS project award.
-  - name: Image Compression using PCA
-    year: 2012
-    tech: Python
-    desc: Lossy image compression with Principal Component Analysis, at any chosen compression ratio.
 
 education:
   - degree: Master's, Digital Image Processing
