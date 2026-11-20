@@ -10,6 +10,12 @@
 
 - section: "Vibe Coded"
   items:
+    - name: soap-client
+      url: https://github.com/yedhukrishnan/soap-client
+      lang: Rust
+      desc: "Small. Secure. Just SOAP. A lightweight desktop client for testing SOAP web services, for macOS and Linux."
+      status: active
+
     - name: jekyll-panel-tui
       url: https://github.com/yedhukrishnan/jekyll-panel-tui
       lang: Jekyll
