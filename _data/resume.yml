@@ -119,3 +119,5 @@ skills:
     items: [TensorFlow, Keras, neural networks, image processing]
   - group: practices
     items: [TDD, pair programming, agile]
+  - group: vibes
+    items: [Rust, Tauri, Svelte, TypeScript, Swift]
