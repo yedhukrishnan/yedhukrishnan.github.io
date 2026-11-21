@@ -12,7 +12,7 @@ permalink: /projects/
         data-url="{{ p.url }}"
         data-title="{{ p.name | escape }}"
         data-excerpt="{{ p.desc | escape }}">
-      <td><a href="{{ p.url }}" target="_blank">{{ p.name }}</a>{% if p.status == 'archived' %} <span class="proj-status">[archived]</span>{% endif %}<div class="proj-desc">{{ p.desc }}</div></td>
+      <td>{{ p.name }} <a href="{{ p.url }}" target="_blank">[source]</a>{% if p.page_url %} <a href="{{ p.page_url }}">[webpage]</a>{% elsif p.page %} <a href="/{{ p.name }}/">[webpage]</a>{% endif %}{% if p.status == 'archived' %} <span class="proj-status">[archived]</span>{% endif %}<div class="proj-desc">{{ p.desc }}</div></td>
       <td class="val">[{{ p.lang }}{% if p.year %} · {{ p.year }}{% endif %}]</td>
     </tr>
     {% endfor %}

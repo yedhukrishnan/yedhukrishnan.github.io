@@ -1,9 +1,10 @@
 # Projects shown on /projects/ — grouped into sections, order is display order.
-# Fields per item: name (required), url, lang, year, desc, status (optional: active | archived)
+# Fields per item: name (required), url (source repo), page (true if yedhu.me/<name> exists), page_url (custom webpage URL), lang, year, desc, status (optional: active | archived)
 - section: "Vibe Coded"
   items:
     - name: soap-client
       url: https://github.com/yedhukrishnan/soap-client
+      page: true
       lang: Rust
       desc: "Small. Secure. Just SOAP. A lightweight desktop client for testing SOAP web services, for macOS and Linux."
       status: active
@@ -16,11 +17,13 @@
 
     - name: time-tracker
       url: https://github.com/yedhukrishnan/mac-simple-time-tracker
+      page: true
       lang: Swift
       desc: "A simple native time tracker for macOS."
 
     - name: yedhu.me
       url: https://github.com/yedhukrishnan/yedhukrishnan.github.io
+      page_url: /
       lang: Jekyll
       desc: "Fable helped me build the theme. But the posts here are original and written by me."
       status: active
@@ -39,6 +42,7 @@
 
     - name: quiet-page
       url: https://github.com/yedhukrishnan/quiet-page
+      page: true
       lang: JavaScript
       desc: "Text sleep-screen generator for E-ink readers."
 
