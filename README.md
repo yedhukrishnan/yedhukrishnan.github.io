@@ -117,7 +117,7 @@ Only books with a "date read" are counted in Year in Books.
 
 ## Hand-edited sections
 
-- **Projects** (`/projects/`, not linked from the tabs): edit `_data/projects.yml`. The file's header comment lists the fields.
+- **Projects** (`/projects/`): edit `_data/projects.yml`. The file's header comment lists the fields.
 - **Resume** (`/resume/`): edit `_data/resume.yml` (summary, experience, projects, education and so on); `_includes/resume.html` renders it.
 - **About text:** edit `about.md`.
 - **Home intro:** edit `index.md`.
