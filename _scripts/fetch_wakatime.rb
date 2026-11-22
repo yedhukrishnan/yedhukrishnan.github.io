@@ -8,7 +8,7 @@ require "net/http"
 require "yaml"
 
 OUT = File.expand_path("../_data/wakatime.json", __dir__)
-MAX_ROWS = 8
+MAX_ROWS = 10
 OTHER_COLOR = "#6b7385"
 
 def row(name, pct, color)
