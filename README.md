@@ -94,7 +94,7 @@ wakatime:
 
 WakaTime's own "Other" entry (time it couldn't classify) and anything under `hide` are dropped, and the remaining entries are rescaled to 100%. With `allow`, anything not named (browsers, Slack, ...) is dropped as well.
 
-The panel shows the `languages`, `editors` and `operating_systems` lists. Each list shows the top 8 entries and folds the rest into "Other".
+The panel shows the `languages`, `editors` and `operating_systems` lists. Each list shows the top 10 entries and folds the rest into "Other".
 
 Privacy note: these lists update automatically, so any new language or editor you use will appear. Use `hide` for anything you'd rather keep private, or exclude private projects in WakaTime itself. The links only expose the chart they belong to, not your dashboard.
 
