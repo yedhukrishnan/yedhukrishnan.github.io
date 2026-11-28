@@ -41,6 +41,8 @@ wakatime:
     - JSON
     - YAML
     - directory
+    - Image
+    - Markdown
   allow:
     editors:
       - Claude Code

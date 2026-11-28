@@ -25,7 +25,11 @@ def fetch_chart(url, hidden, allowed, renames)
   # WakaTime's own "Other" (time it couldn't classify) and hidden names are
   # dropped. An allow list also drops everything else (browsers, chat apps, ...).
   # What's left is rescaled to 100%.
-  rows = rows.reject { |r| r["name"] == "Other" || hidden.include?(r["name"].to_s.downcase) }
+  rows = rows.reject do |r|
+    name = r["name"].to_s.downcase
+    # A hidden name also covers its variants: "image" hides "Image (jpeg)".
+    r["name"] == "Other" || hidden.include?(name) || hidden.include?(name.sub(/ \(.*\)\z/, ""))
+  end
   rows = rows.select { |r| allowed.include?(r["name"].to_s.downcase) } if allowed
   total = rows.sum { |r| r["percent"].to_f }
   raise "no entries left" if total.zero?
